@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "scheme": "acme",
+    "web": {
+      "bundler": "metro"
+    },
+    "name": "komon-mobile-demo",
+    "slug": "komon-mobile-demo"
+  }
+}
