@@ -20,6 +20,10 @@ export default () => {
         }}
       >
         <Stack.Screen name="index" options={{ title: 'Home' }} />
+        <Stack.Screen
+          name="screen/userInfo"
+          options={{ presentation: 'modal' }}
+        />
       </Stack>
     </NativeBaseProvider>
   );

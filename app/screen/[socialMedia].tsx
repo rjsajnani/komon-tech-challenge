@@ -1,14 +1,15 @@
-import { Stack, useSearchParams } from 'expo-router';
-import { Box, Text } from 'native-base';
+import { Stack, useRouter, useSearchParams } from 'expo-router';
+import { Box, Button, Text } from 'native-base';
 
 const SocialMediaHandler = () => {
+  const router = useRouter();
   const { socialMedia } = useSearchParams();
 
   return (
     <Box>
       <Stack.Screen
         options={{
-          title: socialMedia.toString(),
+          title: socialMedia,
           headerStyle: {
             backgroundColor: '#000000',
           },
