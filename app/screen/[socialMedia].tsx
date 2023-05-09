@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 import { ResponseData, getUserInfo } from '../api/getUserInfo';
 import { ListView } from '../components';
 
+// This screen loads all the user info and displays it to the creator
+
 const SocialMediaHandler = () => {
   const { socialMedia } = useSearchParams();
   const [data, setData] = useState<ResponseData[]>([]);

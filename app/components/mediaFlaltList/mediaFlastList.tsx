@@ -5,6 +5,8 @@ import { ResizeMode, Video } from 'expo-av';
 import { MeidaFlatListProps as Props } from './mediaFlaltList.props';
 import { StyleSheet } from 'react-native';
 
+// This component is handling the media provided by various social media API
+
 export const MediaFlatList: React.FC<Props> = (props) => {
   const { lastestPost } = props;
   return (

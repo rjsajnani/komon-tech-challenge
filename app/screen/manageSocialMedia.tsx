@@ -4,6 +4,8 @@ import { StyleSheet } from 'react-native';
 import { ListView } from '../components';
 import { socialMediaList } from '../data';
 
+// Manages a list of social media currently used by the creator
+
 const ManageSocialMedia = () => {
   return (
     <Box style={styles.container}>

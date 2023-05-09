@@ -1,6 +1,8 @@
 import { createContext, useState } from 'react';
 import { ResponseData } from './api/getUserInfo';
 
+// The main reason to use context was the LatestPost wasn't getting passed as params as it was too long
+
 const defaultValues: {
   data: ResponseData;
   updateData: (newData) => void;

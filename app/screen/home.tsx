@@ -3,6 +3,8 @@ import { StyleSheet } from 'react-native';
 import { ListView } from '../components';
 import { adminList } from '../data';
 
+//Mainly used to handle admin tasks which would be useful to the user
+
 const Home = () => {
   return (
     <>

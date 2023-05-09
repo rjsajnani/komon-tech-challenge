@@ -2,6 +2,9 @@ import { Stack } from 'expo-router';
 import { NativeBaseProvider, extendTheme } from 'native-base';
 import { AppProvider } from './context';
 
+// Wrapping AppProvider so we can access the default values
+// Wrapping NativeBaseProvider so the theme can be applied in all the screen
+
 const theme = extendTheme({
   fonts: {
     heading: 'EuclidTriangle-Bold',

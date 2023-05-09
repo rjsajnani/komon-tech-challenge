@@ -13,6 +13,8 @@ import { MediaFlatList } from '../components/mediaFlaltList/mediaFlastList';
 import { AppContext } from '../context';
 import { AntDesign } from '@expo/vector-icons';
 
+//Displays all the information about the user and also shows his latest posts (images/videos)
+
 const UserInfo = () => {
   const { data } = useContext(AppContext);
 

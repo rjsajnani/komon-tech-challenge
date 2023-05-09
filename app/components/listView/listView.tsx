@@ -14,6 +14,13 @@ import { useContext } from 'react';
 import { ListViewProps as Props } from './listView.props';
 import { AppContext } from '../../context';
 
+/* This component is handling all the list view 
+Used by
+- Home Screen
+- ManageSocialMedia Screen
+- SocialMedia Screen
+*/
+
 export const ListView: React.FC<Props> = ({ item }) => {
   const { name, link, icon, tooltip, enabled, avatar_url, bio, followers } =
     item;
