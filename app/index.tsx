@@ -1,16 +1,9 @@
-import { NativeBaseProvider, Text, extendTheme } from 'native-base';
+import { Text } from 'native-base';
 import { StyleSheet, View } from 'react-native';
 import { useFonts } from 'expo-font';
 import { useCallback } from 'react';
-import { SplashScreen } from 'expo-router';
-
-const theme = extendTheme({
-  fonts: {
-    heading: 'EuclidTriangle-Bold',
-    body: 'EuclidTriangle',
-    mono: 'EuclidTriangle',
-  },
-});
+import { Link, SplashScreen } from 'expo-router';
+import Home from './screen/home';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -29,30 +22,21 @@ export default function App() {
   }
 
   return (
-    <NativeBaseProvider theme={theme}>
-      <View style={styles.container}>
-        <View style={styles.main}>
-          <Text fontSize={'2xl'} fontWeight={'bold'} fontFamily={'heading'}>
-            Komon Creator Dashboard
-          </Text>
-          <Text fontSize={'xl'} color={'#38434D'} fontFamily={'body'}>
-            Manage your community
-          </Text>
-        </View>
+    <View style={styles.container} onLayout={onLayoutRootView}>
+      <View style={styles.main}>
+        <Home />
       </View>
-    </NativeBaseProvider>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    padding: 24,
+    paddingHorizontal: 16,
   },
   main: {
     flex: 1,
-    justifyContent: 'center',
     maxWidth: 960,
     marginHorizontal: 'auto',
   },
