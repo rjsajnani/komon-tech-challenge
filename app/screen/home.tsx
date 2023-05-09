@@ -1,28 +1,21 @@
 import { Box, Text } from 'native-base';
 import { StyleSheet } from 'react-native';
 import { ListView } from '../components/listView';
+import { CommonListType } from '../types';
 
-type AdminList = {
-  name: string;
-  link: string;
-  enabled: boolean;
-  tooltip?: string;
-  icon?: any;
-};
-
-const adminList: AdminList[] = [
+const adminList: CommonListType[] = [
   {
     name: 'Manage Social Media',
     link: '/screen/manageSocialMedia',
     enabled: true,
-    icon: 'setting',
+    icon: 'edit',
   },
   {
     name: 'Community Messages',
     link: '/',
-    enabled: true,
+    enabled: false,
     tooltip: 'Coming Soon',
-    icon: 'message1',
+    icon: 'facebook-messenger',
   },
 ];
 

@@ -1,18 +1,20 @@
 import { Box, HStack, Spacer, Text, VStack, useToast } from 'native-base';
-import { AntDesign } from '@expo/vector-icons';
+import { FontAwesome5 } from '@expo/vector-icons';
 import { Link } from 'expo-router';
-import { StyleSheet } from 'react-native';
 
 type Props = {
   item: {
     name: string;
     link: string;
+    enabled: boolean;
     icon?: any;
     tooltip?: string;
   };
 };
 
-export const ListView = ({ item: { name, link, icon, tooltip } }: Props) => {
+export const ListView = ({
+  item: { name, link, icon, tooltip, enabled },
+}: Props) => {
   const toast = useToast();
   return (
     <Box
@@ -24,13 +26,14 @@ export const ListView = ({ item: { name, link, icon, tooltip } }: Props) => {
       pl={['0', '4']}
       pr={['0', '5']}
       py="2.5"
+      style={{ marginVertical: 20 }}
     >
       <Link
         href={link}
-        onPress={tooltip ? () => toast.show({ description: tooltip }) : null}
+        onPress={!enabled ? () => toast.show({ description: tooltip }) : null}
       >
         <HStack space={[2, 3]} justifyContent="space-between">
-          <AntDesign name={icon} size={24} color="black" />
+          <FontAwesome5 name={icon} size={24} color="black" />
           <VStack>
             <Text
               fontFamily={'mono'}

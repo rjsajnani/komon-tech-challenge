@@ -1,5 +1,5 @@
 import { Stack } from 'expo-router';
-import { NativeBaseProvider, extendTheme } from 'native-base';
+import { NativeBaseProvider, StatusBar, extendTheme } from 'native-base';
 
 const theme = extendTheme({
   fonts: {
