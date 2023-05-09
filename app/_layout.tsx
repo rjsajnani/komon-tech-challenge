@@ -1,5 +1,6 @@
 import { Stack } from 'expo-router';
-import { NativeBaseProvider, StatusBar, extendTheme } from 'native-base';
+import { NativeBaseProvider, extendTheme } from 'native-base';
+import { AppProvider } from './context';
 
 const theme = extendTheme({
   fonts: {
@@ -11,20 +12,22 @@ const theme = extendTheme({
 
 export default () => {
   return (
-    <NativeBaseProvider theme={theme}>
-      <Stack
-        screenOptions={{
-          headerStyle: {
-            backgroundColor: '#ffff',
-          },
-        }}
-      >
-        <Stack.Screen name="index" options={{ title: 'Home' }} />
-        <Stack.Screen
-          name="screen/userInfo"
-          options={{ presentation: 'modal' }}
-        />
-      </Stack>
-    </NativeBaseProvider>
+    <AppProvider>
+      <NativeBaseProvider theme={theme}>
+        <Stack
+          screenOptions={{
+            headerStyle: {
+              backgroundColor: '#ffff',
+            },
+          }}
+        >
+          <Stack.Screen name="index" options={{ title: 'Home' }} />
+          <Stack.Screen
+            name="screen/userInfo"
+            options={{ presentation: 'modal' }}
+          />
+        </Stack>
+      </NativeBaseProvider>
+    </AppProvider>
   );
 };

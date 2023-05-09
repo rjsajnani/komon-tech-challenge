@@ -1,8 +1,7 @@
-import { Text } from 'native-base';
 import { StyleSheet, View } from 'react-native';
 import { useFonts } from 'expo-font';
 import { useCallback } from 'react';
-import { Link, SplashScreen } from 'expo-router';
+import { SplashScreen } from 'expo-router';
 import Home from './screen/home';
 
 export default function App() {

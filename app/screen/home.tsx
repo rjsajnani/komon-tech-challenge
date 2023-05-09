@@ -1,23 +1,7 @@
 import { Box, Text } from 'native-base';
 import { StyleSheet } from 'react-native';
-import { ListView } from '../components/listView';
-import { CommonListType } from '../types';
-
-const adminList: CommonListType[] = [
-  {
-    name: 'Manage Social Media',
-    link: '/screen/manageSocialMedia',
-    enabled: true,
-    icon: 'edit',
-  },
-  {
-    name: 'Community Messages',
-    link: '/',
-    enabled: false,
-    tooltip: 'Coming Soon',
-    icon: 'facebook-messenger',
-  },
-];
+import { ListView } from '../components';
+import { adminList } from '../data';
 
 const Home = () => {
   return (

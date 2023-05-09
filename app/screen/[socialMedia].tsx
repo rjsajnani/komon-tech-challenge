@@ -1,9 +1,25 @@
-import { Stack, useRouter, useSearchParams } from 'expo-router';
-import { Box, Button, Text } from 'native-base';
+import { Stack, useSearchParams } from 'expo-router';
+import { Box, Center, FlatList, Spinner } from 'native-base';
+import { useEffect, useState } from 'react';
+import { ResponseData, getUserInfo } from '../api/getUserInfo';
+import { ListView } from '../components';
 
 const SocialMediaHandler = () => {
-  const router = useRouter();
   const { socialMedia } = useSearchParams();
+  const [data, setData] = useState<ResponseData[]>([]);
+
+  async function fetchData() {
+    const res = await getUserInfo(socialMedia);
+    setData(res);
+  }
+
+  useEffect(() => {
+    fetchData();
+
+    return () => {
+      setData([]);
+    };
+  }, []);
 
   return (
     <Box>
@@ -16,7 +32,25 @@ const SocialMediaHandler = () => {
           headerTintColor: '#ffff',
         }}
       />
-      <Text>Social {socialMedia}</Text>
+
+      {data.length > 0 ? (
+        <FlatList
+          data={data}
+          renderItem={({ item }) => {
+            return (
+              <ListView
+                item={{ ...item, link: '/screen/userInfo', enabled: true }}
+                key={item.id}
+              />
+            );
+          }}
+          keyExtractor={(item) => item.id.toString()}
+        />
+      ) : (
+        <Box p={'3/6'}>
+          <Spinner size="lg" color="black" />
+        </Box>
+      )}
     </Box>
   );
 };
