@@ -7,7 +7,7 @@ const mockItem = {
   name: 'Test',
   link: '/',
   enabled: true,
-  icon: 'message',
+  icon: 'edit',
 };
 
 describe('<ListView />', () => {
